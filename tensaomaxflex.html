@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+
+        <link
+            href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <script src="./src/asciimathml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+        <link rel="stylesheet" href="./css/calcs.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ReSmart - Calculadora Tensão Máxima de Flexão</title>
+    </head>
+    <body>
+        <!--Navbar-->
+        <div>
+            <nav class="nav justify-content-center bg-dark">
+                <li class="nav-item">
+                    <a
+                        id="resmart-nav"
+                        class="nav-link active"
+                        aria-current="page"
+                        href="./index.html"
+                        >ReSmart</a
+                    >
+                </li>
+            </nav>
+        </div>
+        <!--Navbar-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl titulo glass w-100">
+                    <h1>Calculadora Tensão Máxima de Flexão</h1>
+                </div>
+            </div>
+            <div class="row">
+                <!--Coluna Esquerda-->
+                <div class="col-xl glass shadow">
+                    <!--Linha Item 1-->
+                    <div class="row d-flex justify-content-center linha-item">
+                        <h2>
+                            <label for="momento">Momento interno (`M`) </label>
+                            <button
+                                type="button"
+                                class="btn btn-md btn-danger item"
+                                data-toggle="popover"
+                                title="Momento Interno"
+                                data-content="São os esforços internos gerados devido à ação das forças externas. Para encontrar o momento fletor interno basta cortar a viga num ponto qualquer. "
+                            >
+                                i
+                            </button>
+                        </h2>
+
+                        <input
+                            id="momento"
+                            type="number"
+                            class="item item-form"
+                        />
+                        <select
+                            class="dropdown item item-form"
+                            name="select"
+                            disabled
+                        >
+                            <option value="kNm">Nm</option>
+                        </select>
+                    </div>
+
+                    <!--Linha Item 2-->
+                    <div class="row d-flex justify-content-center linha-item">
+                        <h2>
+                            <label for="linhaNeutra"
+                                >Distância perpendicular da linha neutra
+                                (`y`)</label
+                            >
+                            <button
+                                type="button"
+                                class="btn btn-md btn-danger item"
+                                data-toggle="popover"
+                                title="Distância perpendicular da linha neutra"
+                                data-content="Baricentro (centróide) da peça calculada."
+                            >
+                                i
+                            </button>
+                        </h2>
+
+                        <input
+                            id="linhaNeutra"
+                            type="number"
+                            class="item item-form"
+                        />
+                        <select
+                            class="dropdown item item-form"
+                            name="select"
+                            disabled
+                        >
+                            <option value="mm">mm</option>
+                        </select>
+                    </div>
+
+                    <!--Linha Item 3-->
+                    <div class="row d-flex justify-content-center linha-item">
+                        <h2>
+                            <label for="momInercia"
+                                >Momento de Inércia (`Izz`)</label
+                            >
+                            <button
+                                type="button"
+                                class="btn btn-md btn-danger item"
+                                data-toggle="popover"
+                                title="Momento de Inércia"
+                                data-content="O momento de inércia de um objeto em relação a um eixo é a propriedade do objeto que o faz resistir a uma variação em sua velocidade vetorial angular em relação ao eixo."
+                            >
+                                i
+                            </button>
+                        </h2>
+
+                        <input
+                            id="momInercia"
+                            type="number"
+                            class="item item-form"
+                        />
+                        <select
+                            class="dropdown item item-form"
+                            name="select"
+                            disabled
+                        >
+                            <option value="mm^4">mm^4</option>
+                        </select>
+                    </div>
+
+                    <!--Linha 3 Botoes-->
+                    <div class="row d-flex justify-content-center linha-item">
+                        <button
+                            class="btn btn-secondary item item-btn"
+                            onclick="limpar()"
+                        >
+                            Limpar
+                        </button>
+                        <button
+                            class="btn btn-primary item item-btn"
+                            onclick="calc()"
+                        >
+                            Calcular
+                        </button>
+                    </div>
+
+                    <!--Linha 4 Resultado-->
+                    <div class="row d-flex justify-content-center linha-item">
+                        <h2>
+                            <label for="result"
+                                >Tensão Máxima de Flexão (Resultado:
+                                `sigmamax`)</label
+                            >
+                        </h2>
+
+                        <input
+                            id="result"
+                            type="number"
+                            class="item item-form"
+                            disabled
+                        />
+                        <select
+                            class="dropdown item item-form"
+                            name="select"
+                            disabled
+                        >
+                            <option value="MPa">MPa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--Coluna Direita-->
+                <div class="col-xl glass shadow">
+                    <p class="mt-3 info">
+                        <b>
+                            A linha neutra passa através do centroide da área da
+                            seção transversal quando o material segue a lei de
+                            Hooke e não existem forças axiais agindo na seção
+                            transversal.
+                        </b>
+                    </p>
+                    <p class="mt-3 info">
+                        <b
+                            >Essa equação é chamada de fórmula e flexão. Tensões
+                            calculadas a partir da fórmula de flexão são
+                            chamadas de tensões fletoras ou tensões de flexão.
+                        </b>
+                    </p>
+
+                    <p class="mt-3 info">
+                        <b>Equação : `sigmamax = (-M*y)/(Izz)` </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="popover"]').popover();
+            });
+
+            function limpar() {
+                let campos = document.getElementsByTagName("input");
+                for (item of campos) {
+                    item.value = "";
+                }
+            }
+
+            async function calc() {
+                let M = parseFloat(document.getElementById("momento").value);
+                let y = parseFloat(
+                    document.getElementById("linhaNeutra").value
+                );
+                let I = parseFloat(document.getElementById("momInercia").value);
+                const json = {
+                    M: M,
+                    y: y,
+                    I: I,
+                };
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(json),
+                };
+                retorno = await fetch(
+                    "http://127.0.0.1:9090/tensaoMax",
+                    options
+                )
+                    .then((data) => {
+                        return data.json();
+                    })
+                    .then((res) => {
+                        console.log(res);
+                        campoRes = document.getElementById("result");
+                        campoRes.value = res.result;
+                    });
+            }
+        </script>
+    </body>
+</html>
