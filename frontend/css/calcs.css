@@ -1,58 +1,121 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
 
 body {
-  height: 100%;
-  font-family: "Comfortaa", cursive;
-  /*background-image: url(../CALCULADORAS/blue-red-gradient-linear-1920x1080-c2-00008b-46141e-a-330-f-14.png);*/
-  background-image: linear-gradient(to right, rgb(69, 19, 31), rgb(16, 5, 114));
-  background-size: 200% 100%;
-  color: black;
+    height: 100%;
+    font-family: "Comfortaa", cursive;
+    /*background-image: url(../CALCULADORAS/blue-red-gradient-linear-1920x1080-c2-00008b-46141e-a-330-f-14.png);*/
+    background-image: linear-gradient(to right, rgb(0, 94, 36), rgb(0, 0, 0));
+    background-size: 200% 100%;
+    color: black;
+}
+h1 {
+    color: white;
+}
+label {
+    color: white;
+}
+span {
+    color: white;
 }
 
 a#resmart-nav {
-  color: antiquewhite;
-  text-shadow: 5px 5px 15px rgb(34, 34, 34);
+    color: antiquewhite;
+    text-shadow: 5px 5px 15px rgb(34, 34, 34);
 }
 
 h2 {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 p {
-  padding: 10px;
-  text-align: justify;
-}
-
-.titulo {
+    padding: 10px;
+    text-align: justify;
 }
 
 .glass {
-  margin: 20px;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 70%);
-  text-align: center;
-  border-radius: 5px;
+    padding: 20px;
+    /* background-color: rgba(102, 102, 102, 0.7); */
+    text-align: center;
 }
 
 .coluna {
-  text-align: center;
-  align-items: center;
+    text-align: center;
+    align-items: center;
 }
 .linha-item {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 .item {
-  width: auto;
+    width: auto;
 }
 
 .item-form {
-  margin: 1px;
-  padding: 5px;
+    margin: 1px;
+    padding: 5px;
 }
 
 .item-btn {
-  margin: 0 15px;
+    margin: 0 15px;
+}
+
+.box {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.child {
+    width: 100%;
+    height: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.chield button {
+    width: 80%;
+    height: 80%;
+}
+
+input {
+    width: 50%;
+    height: 100%;
+}
+
+select {
+    width: 30%;
+    height: 100%;
+}
+
+button {
+    width: 90%;
+    height: 90%;
+    font-size: 80%;
+}
+
+.btn-info {
+    font-size: 10pt;
+    width: 17%;
+    height: 70%;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    margin: 15px;
+}
+
+.btn-info:hover {
+    background-color: brown;
+    color: white;
 }
