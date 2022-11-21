@@ -882,13 +882,13 @@
                                 <div class="row">
                                     <div class="col-xxl">
                                         <label for="vrlmedcorrentemediacarga"
-                                            >Vrlmed</label
+                                            >Fr</label
                                         >
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="Vrlmed"
+                                            title="Fr"
                                             data-content=""
                                         >
                                             i
@@ -899,11 +899,11 @@
                                     <div class="col-xxl">
                                         <div class="input-group mb-3">
                                             <input
-                                                id="vrlpmedcorrentemediacarga"
+                                                id="fr"
                                                 type="number"
                                                 class="form-control"
                                             />
-                                            <span class="p-1">V</span>
+                                            <span class="p-1">Hz</span>
                                         </div>
                                     </div>
                                 </div>
@@ -911,43 +911,13 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="rlcorrentemediacarga"
-                                            >Rl</label
-                                        >
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="Rl"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="rlcorrentemediacarga"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="irlmed">Resultado</label>
+                                        <label for="frl">Resultado</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-danger item"
                                             data-toggle="popover"
-                                            title="Irlmed"
-                                            data-content=""
+                                            title="Frl"
+                                            data-content="Frequência na Carga"
                                         >
                                             i
                                         </button>
@@ -957,12 +927,12 @@
                                     <div class="col-xxl">
                                         <div class="input-group mb-3">
                                             <input
-                                                id="irlmed"
+                                                id="frl"
                                                 type="number"
                                                 class="form-control"
                                                 disabled
                                             />
-                                            <span class="p-1">V</span>
+                                            <span class="p-1">Hz</span>
                                         </div>
                                     </div>
                                 </div>
@@ -972,7 +942,7 @@
                             <button
                                 type="button"
                                 class="btn btn-success mt-3"
-                                onclick="calcCorrenteMediaCarga()"
+                                onclick="calcFrequenciaCarga()"
                             >
                                 Calcular
                             </button>
@@ -1065,6 +1035,13 @@
                 );
                 let Result = vrlpcorrentemediacarga / rlcorrentemediacarga;
                 document.querySelector("#irlmed").value = Number(Result);
+            }
+            function calcFrequenciaCarga() {
+                let fr = parseFloat(document.getElementById("fr").value);
+
+                let Result = fr * 2;
+                console.log(Result);
+                document.querySelector("#frl").value = Number(Result);
             }
             function calc() {
                 let S1 = parseFloat(document.getElementById("S1").value);
