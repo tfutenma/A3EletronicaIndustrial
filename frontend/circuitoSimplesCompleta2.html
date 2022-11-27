@@ -2,34 +2,25 @@
 <html lang="pt-br">
     <head>
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
-
-        <script href="https://unpkg.com/@popperjs/core@2" />
 
         <link
             href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
             rel="stylesheet"
         />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
         <script src="./src/asciimathml.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script
-            id="MathJax-script"
-            async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-        ></script>
         <link rel="stylesheet" href="./css/calcs.css" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
             A3 Eletronica Industrial - Circuito Simples com Retificador de Onda
-            Completa/Ponte
+            Completa
         </title>
     </head>
     <body>
@@ -51,24 +42,25 @@
 
         <div class="container">
             <div class="row mt-4 justify-content-center align-items-center">
-                <h1>Circuito Simples com retificador de Onda Completa/Ponte</h1>
+                <h1>Circuito Simples com retificador de Onda Completa</h1>
             </div>
             <div class="row mt-4 row-cols-xxl-2 row-cols-xl-2 row-cols-sm-1">
-                <div class="col-xxl p-4" id="tensao_eficaz">
+                <div class="col-xxl p-4">
                     <div class="row d-block">
-                        <h1>Tensão Eficaz `V_(2)`</h1>
+                        <h1>Tensão Eficaz (V2)</h1>
                     </div>
                     <div class="row">
                         <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `V_(2)= (V_(1) * N_(2))/N_(1)`
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/SaidaTransformador.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Tensão Eficaz</h5>
+                                    <p class="card-text"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -79,12 +71,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="v1">`V_(1)`</label>
+                                        <label for="v1">V1</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`V1`"
+                                            title="V1"
                                             data-content=""
                                         >
                                             i
@@ -107,12 +99,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="n1">`N_(1)`</label>
+                                        <label for="n1">N1</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`N_(1)`"
+                                            title="N1"
                                             data-content=""
                                         >
                                             i
@@ -135,12 +127,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="n2">`N_(2)`</label>
+                                        <label for="n2">N2</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`N_(2)`"
+                                            title="N2"
                                             data-content=""
                                         >
                                             i
@@ -168,7 +160,7 @@
                                             type="button"
                                             class="btn btn-md btn-danger item"
                                             data-toggle="popover"
-                                            title="`V_(2)`"
+                                            title="V2"
                                             data-content=""
                                         >
                                             i
@@ -201,21 +193,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl p-4" id="tensao_pico">
+                <div class="col-xxl p-4">
                     <div class="row d-block">
-                        <h1>Tensão de Pico `V_(2p)`</h1>
+                        <h1>Tensão de Pico</h1>
                     </div>
                     <div class="row">
                         <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `V_(2p)= V_(2) * sqrt(2)`
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/TensaoPico.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Tensão de Pico</h5>
+                                    <p class="card-text"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,12 +219,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="v2pico">`V_(2)`</label>
+                                        <label for="v2pico">V2</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`V_(2)`"
+                                            title="V2"
                                             data-content=""
                                         >
                                             i
@@ -259,7 +252,7 @@
                                             type="button"
                                             class="btn btn-md btn-danger item"
                                             data-toggle="popover"
-                                            title="`V_(2p)`"
+                                            title="V2p"
                                             data-content=""
                                         >
                                             i
@@ -292,21 +285,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl p-4" id="tensao_pico_carga">
+                <div class="col-xxl p-4">
                     <div class="row d-block">
-                        <h1>Tensão de Pico na Carga `V_(cp)`</h1>
+                        <h1>Tensão de Pico na Carga</h1>
                     </div>
                     <div class="row">
                         <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `V_(cp)= V_(2p) - V_(d)`
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/TensaoPicoCarga.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Tensão de Pico na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -317,14 +313,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="v2ppicocarga"
-                                            >`V_(2p)`</label
-                                        >
+                                        <label for="v2ppicocarga">V2p</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`V_(2p)`"
+                                            title="V2p"
                                             data-content=""
                                         >
                                             i
@@ -347,12 +341,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="vd">`V_(d)`</label>
+                                        <label for="vd">Vd</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`V_(d)`"
+                                            title="Vd"
                                             data-content=""
                                         >
                                             i
@@ -375,12 +369,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="vcpcarga">Resultado</label>
+                                        <label for="vrlpcarga">Resultado</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-danger item"
                                             data-toggle="popover"
-                                            title="`V_(cp)"
+                                            title="Vrlp"
                                             data-content="Tensão de pico na Carga"
                                         >
                                             i
@@ -391,7 +385,7 @@
                                     <div class="col-xxl">
                                         <div class="input-group mb-3">
                                             <input
-                                                id="vcpcarga"
+                                                id="vrlpcarga"
                                                 type="number"
                                                 class="form-control"
                                                 disabled
@@ -413,386 +407,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl p-4" id="corrente">
-                    <div class="row d-block">
-                        <h1>Corrente de Pico na Carga</h1>
-                    </div>
-                    <div class="row">
-                        <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `I= (V_(cp))/(R_(l))`
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div
-                            class="row row-cols-md-4 row-cols-2 justify-content-center"
-                        >
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="vcpcorrente"
-                                            >`V_(cp)`</label
-                                        >
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`V_(cp)`"
-                                            data-content="Tensão de Pico na Carga"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="vcpcorrente"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">V</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="rlcorrente">`R_(l)`</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`R_(l)`"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="rlcorrente"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">`Omega`</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="icorrente">Resultado</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-danger item"
-                                            data-toggle="popover"
-                                            title="`I`"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="icorrente"
-                                                type="number"
-                                                class="form-control"
-                                                disabled
-                                            />
-                                            <span class="p-1">A</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <button
-                                type="button"
-                                class="btn btn-success mt-3"
-                                onclick="calcCorrente()"
-                            >
-                                Calcular
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl p-4" id="tensao_pico">
-                    <div class="row d-block">
-                        <h1>Frequência `F`</h1>
-                    </div>
-                    <div class="row">
-                        <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `F= F_(1) * 2`
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div
-                            class="row row-cols-md-4 row-cols-2 justify-content-center"
-                        >
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="f1frequencia"
-                                            >`F_(1)`</label
-                                        >
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`V_(2)`"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="f1frequencia"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">Hz</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="ffrequencia"
-                                            >Resultado</label
-                                        >
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-danger item"
-                                            data-toggle="popover"
-                                            title="`F`"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="ffrequencia"
-                                                type="number"
-                                                class="form-control"
-                                                disabled
-                                            />
-                                            <span class="p-1">Hz</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <button
-                                type="button"
-                                class="btn btn-success mt-3"
-                                onclick="calcFrequencia()"
-                            >
-                                Calcular
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl p-4" id="tensao_ripple">
-                    <div class="row d-block">
-                        <h1>Tensão de Ripple `V_(ond)`</h1>
-                    </div>
-                    <div class="row">
-                        <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `V_(ond)= (I)/(F*C)`
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div
-                            class="row row-cols-md-4 row-cols-2 justify-content-center"
-                        >
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="iripple">I</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`I`"
-                                            data-content="Corrente Média na Carga"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="iripple"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">A</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="fripple">F</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`F`"
-                                            data-content="Frequencia"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="fripple"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">Hz</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="cripple">`C`</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`C`"
-                                            data-content="Frequencia"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="cripple"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">F</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="vondripple"
-                                            >Resultado</label
-                                        >
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-danger item"
-                                            data-toggle="popover"
-                                            title="`V_(ond)`"
-                                            data-content="Tensão de Ripple"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="vondripple"
-                                                type="number"
-                                                class="form-control"
-                                                disabled
-                                            />
-                                            <span class="p-1">V</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <button
-                                type="button"
-                                class="btn btn-success mt-3"
-                                onclick="calcTensaoRipple()"
-                            >
-                                Calcular
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl p-4" id="tensao_media">
+                <div class="col-xxl p-4">
                     <div class="row d-block">
                         <h1>Tensão Média na Carga</h1>
                     </div>
                     <div class="row">
                         <div class="container">
-                            <div
-                                class="card text-white bg-dark mb-3 align-items-center justify-content-center"
-                                style="
-                                    padding: 10px;
-                                    font-size: xx-large;
-                                    height: 120px;
-                                "
-                            >
-                                `V_(med)= (V_(cp) + (V_(cp) - V_(ond)))/2`
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/TensaoMediaCargaCompleta.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Tensão Média na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -803,14 +435,12 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="vcpmediacarga"
-                                            >`V_(cp)`
-                                        </label>
+                                        <label for="vrlpmediacarga">Vrlp</label>
                                         <button
                                             type="button"
                                             class="btn btn-md btn-secondary item"
                                             data-toggle="popover"
-                                            title="`V_(cp)`"
+                                            title="Vrlp"
                                             data-content=""
                                         >
                                             i
@@ -821,7 +451,7 @@
                                     <div class="col-xxl">
                                         <div class="input-group mb-3">
                                             <input
-                                                id="vcpmediacarga"
+                                                id="vrlpmediacarga"
                                                 type="number"
                                                 class="form-control"
                                             />
@@ -833,44 +463,14 @@
                             <div class="col-xxl">
                                 <div class="row">
                                     <div class="col-xxl">
-                                        <label for="vondmediacarga"
-                                            >`V_(ond)`
-                                        </label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`V_(ond)`"
-                                            data-content=""
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="vondmediacarga"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">V</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="vmedmediacarga"
+                                        <label for="vrlmediacarga"
                                             >Resultado</label
                                         >
                                         <button
                                             type="button"
                                             class="btn btn-md btn-danger item"
                                             data-toggle="popover"
-                                            title="`V_(med)`"
+                                            title="Vrl med"
                                             data-content="Tensão Média na Carga"
                                         >
                                             i
@@ -881,7 +481,7 @@
                                     <div class="col-xxl">
                                         <div class="input-group mb-3">
                                             <input
-                                                id="vmedmediacarga"
+                                                id="vrlmediacarga"
                                                 type="number"
                                                 class="form-control"
                                                 disabled
@@ -903,28 +503,472 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xxl p-4">
+                    <div class="row d-block">
+                        <h1>Tensão Eficaz na Carga</h1>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/TensaoEficazCarga.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Tensão Eficaz na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div
+                            class="row row-cols-md-4 row-cols-2 justify-content-center"
+                        >
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="vrlpeficaz">Vrlp</label>
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="Vrlp"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="vrlpeficaz"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="vrlrms">Resultado</label>
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-danger item"
+                                            data-toggle="popover"
+                                            title="Vrlrms"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="vrlrms"
+                                                type="number"
+                                                class="form-control"
+                                                disabled
+                                            />
+                                            <span class="p-1">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button
+                                type="button"
+                                class="btn btn-success mt-3"
+                                onclick="calcTensaoEficazCarga()"
+                            >
+                                Calcular
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl p-4">
+                    <div class="row d-block">
+                        <h1>Corrente de Pico na Carga</h1>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/CorrentePicoCarga.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Corrente de Pico na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div
+                            class="row row-cols-md-4 row-cols-2 justify-content-center"
+                        >
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="vrlpcorrentepicocarga"
+                                            >Vrlp</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="V1"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="vrlpcorrentepicocarga"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="rlcorrentepicocarga"
+                                            >Rl</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="Rl"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="rlcorrentepicocarga"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="irlpcorrentepicocarga"
+                                            >Resultado</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-danger item"
+                                            data-toggle="popover"
+                                            title="Irlp"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="irlpcorrentepicocarga"
+                                                type="number"
+                                                class="form-control"
+                                                disabled
+                                            />
+                                            <span class="p-1">A</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button
+                                type="button"
+                                class="btn btn-success mt-3"
+                                onclick="calcCorrentePicoCarga()"
+                            >
+                                Calcular
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl p-4">
+                    <div class="row d-block">
+                        <h1>Corrente Média na Carga</h1>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/CorrenteMediaCarga.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Corrente Média na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div
+                            class="row row-cols-md-4 row-cols-2 justify-content-center"
+                        >
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="vrlmedcorrentemediacarga"
+                                            >Vrlmed</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="Vrlmed"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="vrlmedcorrentemediacarga"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="rlcorrentemediacarga"
+                                            >Rl</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="Rl"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="rlcorrentemediacarga"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="irlmed">Resultado</label>
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-danger item"
+                                            data-toggle="popover"
+                                            title="Irlmed"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="irlmed"
+                                                type="number"
+                                                class="form-control"
+                                                disabled
+                                            />
+                                            <span class="p-1">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button
+                                type="button"
+                                class="btn btn-success mt-3"
+                                onclick="calcFrequenciaCarga()"
+                            >
+                                Calcular
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl p-4">
+                    <div class="row d-block">
+                        <h1>Frequência na Carga</h1>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="card text-white bg-dark mb-3">
+                                <img
+                                    class="card-img-top"
+                                    src="./imgs/FrequenciaCarga.png"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Frequência na Carga
+                                    </h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div
+                            class="row row-cols-md-4 row-cols-2 justify-content-center"
+                        >
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="vrlmedcorrentemediacarga"
+                                            >Fr</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-secondary item"
+                                            data-toggle="popover"
+                                            title="Fr"
+                                            data-content=""
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="fr"
+                                                type="number"
+                                                class="form-control"
+                                            />
+                                            <span class="p-1">Hz</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="frl">Resultado</label>
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-danger item"
+                                            data-toggle="popover"
+                                            title="Frl"
+                                            data-content="Frequência na Carga"
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="frl"
+                                                type="number"
+                                                class="form-control"
+                                                disabled
+                                            />
+                                            <span class="p-1">Hz</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button
+                                type="button"
+                                class="btn btn-success mt-3"
+                                onclick="calcFrequenciaCarga()"
+                            >
+                                Calcular
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6VZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"
         ></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
             crossorigin="anonymous"
         ></script>
-
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"
+        ></script>
         <script>
-            const popoverTriggerList = document.querySelectorAll(
-                '[data-bs-toggle="popover"]'
-            );
-            const popoverList = [...popoverTriggerList].map(
-                (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-            );
+            $(document).ready(function () {
+                $('[data-toggle="popover"]').popover();
+            });
 
             function limpar() {
                 let campos = document.getElementsByTagName("input");
@@ -953,13 +997,13 @@
                 );
                 let vd = parseFloat(document.getElementById("vd").value);
                 let Result = v2ppicocarga - vd;
-                document.querySelector("#vcpcarga").value = Number(Result);
+                document.querySelector("#vrlpcarga").value = Number(Result);
             }
             function calcTensaoMediaCarga() {
                 let vrlpmediacarga = parseFloat(
                     document.getElementById("vrlpmediacarga").value
                 );
-                let Result = vrlpmediacarga * 0.318;
+                let Result = (2 * vrlpmediacarga) / Math.PI;
                 document.querySelector("#vrlmediacarga").value = Number(Result);
             }
             function calcTensaoEficazCarga() {
@@ -969,40 +1013,41 @@
                 let Result = vrlpeficaz / 2;
                 document.querySelector("#vrlrms").value = Number(Result);
             }
-            function calcCorrente() {
-                let vcp = parseFloat(
-                    document.getElementById("vcpcorrente").value
+            function calcCorrentePicoCarga() {
+                let vrlpcorrentepicocarga = parseFloat(
+                    document.getElementById("vrlpcorrentepicocarga").value
                 );
-                let rl = parseFloat(
-                    document.getElementById("rlcorrente").value
+                let rlcorrentepicocarga = parseFloat(
+                    document.getElementById("rlcorrentepicocarga").value
                 );
-                let Result = vcp / rl;
-                document.querySelector("#icorrente").value = Number(Result);
-            }
-            function calcFrequencia() {
-                let f1 = parseFloat(
-                    document.getElementById("f1frequencia").value
-                );
-                let Result = f1 * 2;
-                document.querySelector("#ffrequencia").value = Number(Result);
-            }
-            function calcTensaoRipple() {
-                let i = parseFloat(document.getElementById("iripple").value);
-                let f = parseFloat(document.getElementById("fripple").value);
-                let c = parseFloat(document.getElementById("cripple").value);
-                let Result = i / (f * c);
-                document.querySelector("#vondripple").value = Number(Result);
-            }
-            function calcTensaoMediaCarga() {
-                let vcp = parseFloat(
-                    document.getElementById("vcpmediacarga").value
-                );
-                let vond = parseFloat(
-                    document.getElementById("vondmediacarga").value
-                );
-                let Result = (vcp + (vcp - vond)) / 2;
-                document.querySelector("#vmedmediacarga").value =
+                let Result = vrlpcorrentepicocarga / rlcorrentepicocarga;
+                document.querySelector("#irlpcorrentepicocarga").value =
                     Number(Result);
+            }
+            function calcCorrenteMediaCarga() {
+                let vrlpcorrentemediacarga = parseFloat(
+                    document.getElementById("vrlpmedcorrentemediacarga").value
+                );
+                let rlcorrentemediacarga = parseFloat(
+                    document.getElementById("rlcorrentemediacarga").value
+                );
+                let Result = vrlpcorrentemediacarga / rlcorrentemediacarga;
+                document.querySelector("#irlmed").value = Number(Result);
+            }
+            function calcFrequenciaCarga() {
+                let fr = parseFloat(document.getElementById("fr").value);
+
+                let Result = fr * 2;
+                console.log(Result);
+                document.querySelector("#frl").value = Number(Result);
+            }
+            function calc() {
+                let S1 = parseFloat(document.getElementById("S1").value);
+                let S2 = parseFloat(document.getElementById("S2").value);
+                let Q = parseFloat(document.getElementById("eCortante").value);
+                let dS1 = parseFloat(document.getElementById("distS1").value);
+                let dS2 = parseFloat(document.getElementById("distS2").value);
+                let dQ = parseFloat(document.getElementById("distQ").value);
             }
         </script>
     </body>
