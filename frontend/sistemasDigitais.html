@@ -68,6 +68,16 @@
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/not.png" alt="" style="width: 100%" />
                 </div>
+                <div
+                    id="not_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -134,11 +144,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/and.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="and_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -208,11 +226,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/nand2.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="nand_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -279,11 +305,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/or.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="or_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -350,11 +384,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/nor.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="nor_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -421,11 +463,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/xor.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="xor_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -492,11 +542,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-2 justify-content-center align-items-center">
                     <img src="./imgs/xnor.png" alt="" style="width: 100%" />
                 </div>
-
+                <div
+                    id="xnor_botao"
+                    class="col-md-1 justify-content-center align-items-center m-2"
+                    style="
+                        height: 30px;
+                        width: 15px;
+                        background-color: white;
+                        border-radius: 10px 10px 0 0;
+                    "
+                ></div>
                 <div class="col-md-2">
                     <div class="row" style="width: 150px; height: 30px">
                         <div class="input-group">
@@ -574,11 +632,18 @@
 
             function calcNot() {
                 a = document.getElementById("a_not").value;
-                console.log(typeof a);
+
                 if ((a != 1 && a != 0) || a == "") {
                     alert("Preencha a(s) entrada(s) com 0 ou 1");
                 } else {
-                    Result = !a;
+                    Result = !parseInt(a);
+                    console.log(Result);
+                    if (Result) {
+                        console.log("Entrou");
+                        document.querySelector(
+                            "#not_botao"
+                        ).style.backgroundColor = "green";
+                    }
                     document.querySelector("#r_not").value = parseBool(Result);
                 }
             }
