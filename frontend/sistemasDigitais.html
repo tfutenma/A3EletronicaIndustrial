@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+
+        <link
+            href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <script src="./src/asciimathml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+        <link rel="stylesheet" href="./css/calcs.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>A3 Eletronica Industrial - Circuito Composto</title>
+    </head>
+    <body>
+        <!--Navbar-->
+        <div>
+            <nav class="nav justify-content-center bg-dark">
+                <li class="nav-item">
+                    <a
+                        id="resmart-nav"
+                        class="nav-link active"
+                        aria-current="page"
+                        href="./index.html"
+                        >A3 Eletronica Industrial</a
+                    >
+                </li>
+            </nav>
+        </div>
+        <!--Navbar-->
+
+        <div class="container">
+            <div class="row">
+                <div
+                    class="g-col-md-xl titulo glass w-100 justify-content-center align-items-center"
+                >
+                    <h1>Simulador Portas Lógicas</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center" id="not">
+                <h3 style="color: white; text-align: center">NOT</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_not" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_not"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/not.png" alt="" style="width: 100%" />
+                </div>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_not" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_not"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcNot()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div class="row justify-content-center align-items-center" id="and">
+                <h3 style="color: white; text-align: center">AND</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_and" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_and"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_and" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_and"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/and.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_and" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_and"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcAnd()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div
+                class="row justify-content-center align-items-center"
+                id="nand"
+            >
+                <h3 style="color: white; text-align: center">NAND</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_nand" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_nand"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_nand" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_nand"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/nand2.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_nand" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_nand"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcNand()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div class="row justify-content-center align-items-center" id="or">
+                <h3 style="color: white; text-align: center">OR</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_or" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_or"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_or" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_or"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/or.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_or" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_or"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcOr()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div class="row justify-content-center align-items-center" id="nor">
+                <h3 style="color: white; text-align: center">NOR</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_nor" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_nor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_nor" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_nor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/nor.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_nor" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_nor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcNor()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div class="row justify-content-center align-items-center" id="xor">
+                <h3 style="color: white; text-align: center">XOR</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_xor" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_xor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_xor" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_xor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/xor.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_xor" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_xor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcXor()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <div class="row justify-content-center align-items-center">
+                <h3 style="color: white; text-align: center">XNOR</h3>
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <label for="a_xnor" style="color: black"
+                                    >A:</label
+                                >
+                            </span>
+                            <input
+                                id="a_xnor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="width: 150px">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                ><label for="b_xnor" style="color: black"
+                                    >B:</label
+                                ></span
+                            >
+                            <input
+                                id="b_xnor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 justify-content-center align-items-center">
+                    <img src="./imgs/xnor.png" alt="" style="width: 100%" />
+                </div>
+
+                <div class="col-md-2">
+                    <div class="row" style="width: 150px; height: 30px">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"
+                                ><label for="r_xnor" style="color: black"
+                                    >R:</label
+                                ></span
+                            >
+                            <input
+                                disabled
+                                id="r_xnor"
+                                type="number"
+                                class="form-control"
+                                max="1"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button
+                        type="button"
+                        class="btn btn-success mt-3"
+                        onclick="calcXnor()"
+                    >
+                        Calcular
+                    </button>
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="popover"]').popover();
+            });
+
+            function limpar() {
+                let campos = document.getElementsByTagName("input");
+                for (item of campos) {
+                    item.value = "";
+                }
+            }
+
+            function parseBool(bool) {
+                if (bool) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+
+            function parseInt(int) {
+                if (int == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function calcNot() {
+                a = document.getElementById("a_not").value;
+                console.log(typeof a);
+                if ((a != 1 && a != 0) || a == "") {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    Result = !a;
+                    document.querySelector("#r_not").value = parseBool(Result);
+                }
+            }
+
+            function calcAnd() {
+                a = document.getElementById("a_and").value;
+                b = document.getElementById("b_and").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = a && b;
+                    document.querySelector("#r_and").value = parseBool(Result);
+                }
+            }
+
+            function calcNand() {
+                a = document.getElementById("a_nand").value;
+                b = document.getElementById("b_nand").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = !(a && b);
+                    document.querySelector("#r_nand").value = parseBool(Result);
+                }
+            }
+
+            function calcOr() {
+                a = document.getElementById("a_or").value;
+                b = document.getElementById("b_or").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = a || b;
+                    document.querySelector("#r_or").value = parseBool(Result);
+                }
+            }
+            function calcNor() {
+                a = document.getElementById("a_nor").value;
+                b = document.getElementById("b_nor").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = !(a || b);
+                    document.querySelector("#r_nor").value = parseBool(Result);
+                }
+            }
+            function calcXor() {
+                a = document.getElementById("a_xor").value;
+                b = document.getElementById("b_xor").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = a ^ b;
+                    document.querySelector("#r_xor").value = parseBool(Result);
+                }
+            }
+            function calcXnor() {
+                a = document.getElementById("a_xnor").value;
+                b = document.getElementById("b_xnor").value;
+                if (
+                    (a != 1 && a != 0) ||
+                    (b != 1 && b != 0) ||
+                    a == "" ||
+                    b == ""
+                ) {
+                    alert("Preencha a(s) entrada(s) com 0 ou 1");
+                } else {
+                    a = parseInt(a);
+                    b = parseInt(b);
+                    Result = !(a ^ b);
+                    document.querySelector("#r_xnor").value = parseBool(Result);
+                }
+            }
+        </script>
+    </body>
+</html>
