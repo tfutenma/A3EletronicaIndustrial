@@ -639,10 +639,13 @@
                     Result = !parseInt(a);
                     console.log(Result);
                     if (Result) {
-                        console.log("Entrou");
                         document.querySelector(
                             "#not_botao"
-                        ).style.backgroundColor = "green";
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#not_botao"
+                        ).style.backgroundColor = "white";
                     }
                     document.querySelector("#r_not").value = parseBool(Result);
                 }
@@ -662,6 +665,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = a && b;
+                    if (Result) {
+                        document.querySelector(
+                            "#and_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#and_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_and").value = parseBool(Result);
                 }
             }
@@ -680,6 +692,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = !(a && b);
+                    if (Result) {
+                        document.querySelector(
+                            "#nand_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#nand_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_nand").value = parseBool(Result);
                 }
             }
@@ -698,6 +719,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = a || b;
+                    if (Result) {
+                        document.querySelector(
+                            "#or_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#or_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_or").value = parseBool(Result);
                 }
             }
@@ -715,6 +745,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = !(a || b);
+                    if (Result) {
+                        document.querySelector(
+                            "#nor_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#nor_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_nor").value = parseBool(Result);
                 }
             }
@@ -732,6 +771,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = a ^ b;
+                    if (Result) {
+                        document.querySelector(
+                            "#xor_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#xor_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_xor").value = parseBool(Result);
                 }
             }
@@ -749,6 +797,15 @@
                     a = parseInt(a);
                     b = parseInt(b);
                     Result = !(a ^ b);
+                    if (Result) {
+                        document.querySelector(
+                            "#xnor_botao"
+                        ).style.backgroundColor = "red";
+                    } else {
+                        document.querySelector(
+                            "#xnor_botao"
+                        ).style.backgroundColor = "white";
+                    }
                     document.querySelector("#r_xnor").value = parseBool(Result);
                 }
             }
