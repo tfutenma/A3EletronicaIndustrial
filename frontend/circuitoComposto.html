@@ -322,13 +322,13 @@
                                     <span
                                         class="input-group-text"
                                         id="basic-addon1"
-                                        ><label for="i2" style="color: black"
-                                            >I2:</label
+                                        ><label for="i3" style="color: black"
+                                            >I3:</label
                                         ></span
                                     >
                                     <input
                                         disabled
-                                        id="i2"
+                                        id="i3"
                                         type="number"
                                         class="form-control"
                                     />
@@ -539,12 +539,12 @@
                 e2 = parseFloat(document.getElementById("e2").value);
                 malhaA = `-(${r1}*a)-(${r1}*c)-(${r3}*a)-(${r4}*a)=${e1}`;
                 malhaB = `(${r2}*c) - (${r5}*b) - (${r6}*b) = ${e2}`;
-                c = `a-b`;
+                c = `c=a-b`;
                 var correntes = nerdamer.solveEquations([malhaA, malhaB, c]);
                 console.log(correntes);
                 i1 = correntes[0][1];
-                i2 = correntes[0][1];
-                i3 = correntes[0][1];
+                i2 = correntes[1][1];
+                i3 = correntes[2][1];
                 document.querySelector("#i1").value = i1;
                 document.querySelector("#i2").value = i2;
                 document.querySelector("#i3").value = i3;
