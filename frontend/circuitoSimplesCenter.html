@@ -935,6 +935,7 @@
                 let n2 = parseFloat(document.getElementById("n2").value);
                 let Result = (v1 * n2) / n1;
                 document.querySelector("#v2").value = Number(Result);
+                document.querySelector("#v2pico").value = Number(Result);
             }
             function calcTensaoPico() {
                 let v2pico = parseFloat(
@@ -942,6 +943,7 @@
                 );
                 let Result = v2pico * Math.sqrt(2);
                 document.querySelector("#v2ppico").value = Number(Result);
+                document.querySelector("#v2ppicocarga").value = Number(Result);
             }
             function calcTensaoPicoCarga() {
                 let v2ppicocarga = parseFloat(
@@ -950,13 +952,8 @@
                 let vd = parseFloat(document.getElementById("vd").value);
                 let Result = v2ppicocarga / 2 - vd;
                 document.querySelector("#vcpcarga").value = Number(Result);
-            }
-            function calcTensaoEficazCarga() {
-                let vrlpeficaz = parseFloat(
-                    document.getElementById("vrlpeficaz").value
-                );
-                let Result = vrlpeficaz / 2;
-                document.querySelector("#vrlrms").value = Number(Result);
+                document.querySelector("#vcpcorrente").value = Number(Result);
+                document.querySelector("#vcpmediacarga").value = Number(Result);
             }
             function calcCorrente() {
                 let vcp = parseFloat(
@@ -967,6 +964,7 @@
                 );
                 let Result = vcp / rl;
                 document.querySelector("#icorrente").value = Number(Result);
+                document.querySelector("#iripple").value = Number(Result);
             }
             function calcFrequencia() {
                 let f1 = parseFloat(
@@ -974,6 +972,7 @@
                 );
                 let Result = f1 * 2;
                 document.querySelector("#ffrequencia").value = Number(Result);
+                document.querySelector("#fripple").value = Number(Result);
             }
             function calcTensaoRipple() {
                 let i = parseFloat(document.getElementById("iripple").value);
@@ -981,6 +980,8 @@
                 let c = parseFloat(document.getElementById("cripple").value);
                 let Result = i / (f * c);
                 document.querySelector("#vondripple").value = Number(Result);
+                document.querySelector("#vondmediacarga").value =
+                    Number(Result);
             }
             function calcTensaoMediaCarga() {
                 let vcp = parseFloat(
