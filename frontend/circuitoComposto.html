@@ -263,7 +263,7 @@
                                 <button
                                     type="button"
                                     class="btn btn-success mt-3"
-                                    onclick="calc()"
+                                    onclick="calcCorrentes()"
                                 >
                                     Calcular
                                 </button>
@@ -489,7 +489,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-3">
+                        <div class="col-md-3 mt-3 mb-5">
                             <div class="row" style="height: 30px">
                                 <div class="input-group">
                                     <span
@@ -522,7 +522,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            integrity="sha384-JZr6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
 
@@ -532,7 +532,74 @@
         <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
 
         <script>
-            function algebra(malhaB) {}
+            function calcCorrentes() {
+                r1 = parseFloat(document.getElementById("r1").value);
+                r2 = parseFloat(document.getElementById("r2").value);
+                r3 = parseFloat(document.getElementById("r3").value);
+                r4 = parseFloat(document.getElementById("r4").value);
+                r5 = parseFloat(document.getElementById("r5").value);
+                r6 = parseFloat(document.getElementById("r6").value);
+                e1 = parseFloat(document.getElementById("e1").value);
+                e2 = parseFloat(document.getElementById("e2").value);
+
+                var soma_equacoes = [];
+                var malha_um_i1 = r1 + r4 + r3 + r2;
+                var malha_um_i2 = r2;
+                var equacao_i1 = [malha_um_i1, malha_um_i2, e1];
+                var malha_dois_i1 = r2;
+                var malha_dois_i2 = r5 + r6 + r2;
+                var equacao_i2 = [malha_dois_i1, malha_dois_i2, e2];
+
+                function calcular_i1() {
+                    var t2m1 = -equacao_i1[1];
+                    var t2m2 = equacao_i2[1];
+
+                    for (var i = 0; i < equacao_i1.length; i++) {
+                        equacao_i1[i] = equacao_i1[i] * t2m2;
+                    }
+
+                    for (var i = 0; i < equacao_i2.length; i++) {
+                        equacao_i2[i] = equacao_i2[i] * t2m1;
+                    }
+
+                    for (var i = 0; i < equacao_i1.length; i++) {
+                        var soma = equacao_i1[i] + equacao_i2[i];
+                        soma_equacoes.push(soma);
+                    }
+
+                    return soma_equacoes[2] / soma_equacoes[0];
+                }
+
+                function calcular_i2(i1) {
+                    return (equacao_i1[2] - equacao_i1[0] * i1) / equacao_i1[1];
+                }
+
+                i1 = calcular_i1();
+                i2 = calcular_i2(i1);
+                i3 = i1 + i2;
+
+                document.querySelector("#i1").value = i1.toFixed(2);
+                document.querySelector("#i2").value = i2.toFixed(2);
+                document.querySelector("#i3").value = i3.toFixed(2);
+
+                p1 = r1 * Math.pow(i1, 2);
+                p2 = r2 * Math.pow(i3, 2);
+                p3 = r3 * Math.pow(i1, 2);
+                p4 = r4 * Math.pow(i1, 2);
+                p5 = r5 * Math.pow(i2, 2);
+                p6 = r6 * Math.pow(i2, 2);
+                pe1 = e1 * i1;
+                pe2 = e2 * i2;
+
+                document.querySelector("#p1").value = p1.toFixed(2);
+                document.querySelector("#p2").value = p2.toFixed(2);
+                document.querySelector("#p3").value = p3.toFixed(2);
+                document.querySelector("#p4").value = p4.toFixed(2);
+                document.querySelector("#p5").value = p5.toFixed(2);
+                document.querySelector("#p6").value = p6.toFixed(2);
+                document.querySelector("#pe1").value = pe1.toFixed(2);
+                document.querySelector("#pe2").value = pe2.toFixed(2);
+            }
 
             function calc() {
                 r1 = parseFloat(document.getElementById("r1").value);
@@ -543,14 +610,34 @@
                 r6 = parseFloat(document.getElementById("r6").value);
                 e1 = parseFloat(document.getElementById("e1").value);
                 e2 = parseFloat(document.getElementById("e2").value);
-                malhaA = `-(${r1}*a)-(${r1}*c)-(${r3}*a)-(${r4}*a)=${e1}`;
-                malhaB = `(${r2}*c) - (${r5}*b) - (${r6}*b) = ${e2}`;
-                c = `c=a-b`;
-                var correntes = nerdamer.solveEquations([malhaA, malhaB, c]);
+
+                // malhaA = `(${r1}*a)+(${r2}*b)+(${r3}*a)+(${r4}*a)=${e1}`;
+                // malhaB = `-(${r2}*b) + (${r5}*c) + (${r6}*c) =${e2}`;
+                // c = `c=a-b`;
+
+                // malhaA = `a - b = 10`;
+                // malhaB = `a + c = 20`;
+                // c = `c = a + 15`;
+
+                // malhaA = `-(${r1}*a)-(${r1}*b)+(${r1}*a) -(${r3}*a)-(${r4}*a)=${e1}`;
+                // malhaB = `(${r2}*a) - (${r2}*b) - (${r5}*b) - (${r6}*b) = ${e2}`;
+
+                // b = a - c;
+
+                // (${r2}*b) = (${r2}*a) - (${r2}*c)
+
+                // (${r2}*b) = - (${r2}*a) + (${r2}*c)
+
+                malhaA = `(${r1}*a) + (${r2}*a) - (${r2}*c) + (${r3}*a) + (${r4}*a)  = ${e1}`;
+                malhaB = `(${r5}*c) + (${r6}*c) - (${r2}*a) + (${r2}*c) = ${e2}`;
+
+                var correntes = nerdamer.solveEquations([malhaA, malhaB]);
                 console.log(correntes);
                 i1 = correntes[0][1];
                 i2 = correntes[1][1];
-                i3 = correntes[2][1];
+                // i3 = correntes[2][1];
+                i3 = i1 - i2;
+
                 document.querySelector("#i1").value = i1;
                 document.querySelector("#i2").value = i2;
                 document.querySelector("#i3").value = i3;

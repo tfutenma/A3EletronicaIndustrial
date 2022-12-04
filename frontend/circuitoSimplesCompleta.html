@@ -229,7 +229,7 @@
                                         <label for="v2pico">`V_(2)`</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2)`"
                                             data-content=""
@@ -322,7 +322,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2p)`"
                                             data-content=""
@@ -350,7 +350,7 @@
                                         <label for="vd">`V_(d)`</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(d)`"
                                             data-content=""
@@ -366,6 +366,8 @@
                                                 id="vd"
                                                 type="number"
                                                 class="form-control"
+                                                value="0.7"
+                                                disabled
                                             />
                                             <span class="p-1">V</span>
                                         </div>
@@ -443,7 +445,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(cp)`"
                                             data-content="Tensão de Pico na Carga"
@@ -534,7 +536,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl p-4" id="tensao_pico">
+                <div class="col-xxl p-4" id="frequencia">
                     <div class="row d-block">
                         <h1>Frequência `F`</h1>
                     </div>
@@ -564,7 +566,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2)`"
                                             data-content=""
@@ -580,6 +582,8 @@
                                                 id="f1frequencia"
                                                 type="number"
                                                 class="form-control"
+                                                value="60"
+                                                disabled
                                             />
                                             <span class="p-1">Hz</span>
                                         </div>
@@ -610,6 +614,7 @@
                                                 id="ffrequencia"
                                                 type="number"
                                                 class="form-control"
+                                                value="120"
                                                 disabled
                                             />
                                             <span class="p-1">Hz</span>
@@ -657,7 +662,7 @@
                                         <label for="iripple">I</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`I`"
                                             data-content="Corrente Média na Carga"
@@ -685,7 +690,7 @@
                                         <label for="fripple">F</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`F`"
                                             data-content="Frequencia"
@@ -701,6 +706,8 @@
                                                 id="fripple"
                                                 type="number"
                                                 class="form-control"
+                                                disabled
+                                                value="120"
                                             />
                                             <span class="p-1">Hz</span>
                                         </div>
@@ -808,7 +815,7 @@
                                         </label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(cp)`"
                                             data-content=""
@@ -838,7 +845,7 @@
                                         </label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(ond)`"
                                             data-content=""

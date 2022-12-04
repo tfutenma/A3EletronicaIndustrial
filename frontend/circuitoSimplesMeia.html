@@ -229,7 +229,7 @@
                                         <label for="v2pico">`V_(2)`</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2)`"
                                             data-content=""
@@ -322,7 +322,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2p)`"
                                             data-content=""
@@ -350,7 +350,7 @@
                                         <label for="vd">`V_(d)`</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(d)`"
                                             data-content=""
@@ -366,6 +366,7 @@
                                                 id="vd"
                                                 type="number"
                                                 class="form-control"
+                                                value="0.7"
                                             />
                                             <span class="p-1">V</span>
                                         </div>
@@ -443,7 +444,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(cp)`"
                                             data-content="Tensão de Pico na Carga"
@@ -534,7 +535,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl p-4" id="tensao_pico">
+                <div class="col-xxl p-4" id="frequencia">
                     <div class="row d-block">
                         <h1>Frequência `F`</h1>
                     </div>
@@ -564,7 +565,7 @@
                                         >
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(2)`"
                                             data-content=""
@@ -580,6 +581,8 @@
                                                 id="f1frequencia"
                                                 type="number"
                                                 class="form-control"
+                                                value="60"
+                                                disabled
                                             />
                                             <span class="p-1">Hz</span>
                                         </div>
@@ -611,6 +614,7 @@
                                                 type="number"
                                                 class="form-control"
                                                 disabled
+                                                value="60"
                                             />
                                             <span class="p-1">Hz</span>
                                         </div>
@@ -657,7 +661,7 @@
                                         <label for="iripple">I</label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`I`"
                                             data-content="Corrente Média na Carga"
@@ -675,34 +679,6 @@
                                                 class="form-control"
                                             />
                                             <span class="p-1">A</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl">
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <label for="fripple">F</label>
-                                        <button
-                                            type="button"
-                                            class="btn btn-md btn-secondary item"
-                                            data-toggle="popover"
-                                            title="`F`"
-                                            data-content="Frequencia"
-                                        >
-                                            i
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xxl">
-                                        <div class="input-group mb-3">
-                                            <input
-                                                id="fripple"
-                                                type="number"
-                                                class="form-control"
-                                            />
-                                            <span class="p-1">Hz</span>
                                         </div>
                                     </div>
                                 </div>
@@ -731,6 +707,36 @@
                                                 class="form-control"
                                             />
                                             <span class="p-1">F</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <label for="fripple">F</label>
+                                        <button
+                                            type="button"
+                                            class="btn btn-md btn-danger item"
+                                            data-toggle="popover"
+                                            title="`F`"
+                                            data-content="Frequencia"
+                                        >
+                                            i
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                        <div class="input-group mb-3">
+                                            <input
+                                                id="fripple"
+                                                type="number"
+                                                class="form-control"
+                                                disabled
+                                                value="60"
+                                            />
+                                            <span class="p-1">Hz</span>
                                         </div>
                                     </div>
                                 </div>
@@ -808,7 +814,7 @@
                                         </label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(cp)`"
                                             data-content=""
@@ -838,7 +844,7 @@
                                         </label>
                                         <button
                                             type="button"
-                                            class="btn btn-md btn-secondary item"
+                                            class="btn btn-md btn-danger item"
                                             data-toggle="popover"
                                             title="`V_(ond)`"
                                             data-content=""
